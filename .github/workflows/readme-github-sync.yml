@@ -1,9 +1,5 @@
 name: Sync OAS to ReadMe
-on:
-  push:
-    branches:
-      - master
-      - main
+on: push
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,5 +9,6 @@ jobs:
       - uses: readmeio/github-readme-sync@v2
         with:
           readme-oas-key: ZxTyUFTb377PJZ8JuscrTrRa5yn1J0Bo:612ad77761023e0de02df406
+          api-version: 'v1.0.0'
           oas-file-path: './petstore.json'
       - run: echo "🍏 This job's status is ${{ job.status }}."
